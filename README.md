@@ -1,7 +1,7 @@
 # ionic-react-item-list
 An example of a nicely styled item list in Ionic React
 
-![Ionic React Item List](https://repository-images.githubusercontent.com/356345920/beb24480-9966-11eb-9397-d378677de5d0)
+![Ionic React Item List](https://repository-images.githubusercontent.com/358203630/3953e780-9ddf-11eb-9c0b-da2dde02dbfb)
 
 ### Included in this Ionic React Template/UI
 * Custom animations
