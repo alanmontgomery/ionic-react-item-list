@@ -1,0 +1,130 @@
+.page {
+
+    ion-header {
+
+        background-color: #5a55ca;
+    }
+
+    ion-toolbar {
+
+        --border-style: none;
+        --background: #5a55ca;
+        --color: white;
+        --min-height: 8rem;
+
+        // --stripe: #645fd1;
+        --stripe: #5a55ca;
+        --bg: #645fd1;
+        --background: transparent;
+        background: linear-gradient(135deg, var(--bg) 25%, transparent 25%) -50px 0,
+        linear-gradient(225deg, var(--bg) 25%, transparent 25%) -50px 0,
+        linear-gradient(315deg, var(--bg) 25%, transparent 25%),
+        linear-gradient(45deg, var(--bg) 25%, transparent 25%);
+        background-size: 100px 100px;
+        background-color: var(--stripe);
+
+        ion-button {
+
+            font-size: 1.2rem;
+            font-weight: 800;
+        }
+    }
+
+    ion-content {
+
+        --background: #5a55ca;
+        overflow: hidden;
+    }
+
+    ion-searchbar {
+
+        --border-radius: 10px;
+        --background: white;
+        --color: black;
+        min-height: 5rem;
+        padding: 1rem;
+        margin-top: 1rem;
+    }
+
+    ion-list {
+
+        background-color: #e7edfb;
+    }
+
+    ion-footer {
+
+        background-color: #e7edfb;
+        padding: 1rem;
+
+        ion-button {
+
+            --background: #5a55ca;
+            --background-focused: #6f6bbb;
+            --background-activated: #6f6bbb;
+            --padding-top: 1rem;
+            --padding-bottom: 1rem;
+            --padding-start: 0.75rem;
+            --padding-end: 0.75rem;
+            height: 3.5rem;
+            font-weight: 700;
+        }
+    }
+}
+
+.mainContent {
+
+
+    background-color: #e7edfb;
+    height: 100%;
+    width: 100%;
+    overflow: scroll !important;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+.employeeItem {
+
+    --border-radius: 10px;
+    --padding-start: 1rem;
+    --padding-end: 1rem;
+    --padding-top: 1rem;
+    --padding-bottom: 1rem;
+    padding: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    min-height: 5rem;
+
+    img {
+
+        width: 3rem;
+        border-radius: 10px;
+    }
+
+    ion-label {
+
+        padding-left: 1.2rem;
+
+        h2 {
+
+            font-weight: 600;
+            letter-spacing: -0.02rem;
+        }
+
+        p {
+
+            letter-spacing: -0.03rem;
+        }
+    }
+
+    ion-button {
+
+        --background: #5a55ca;
+        --background-focused: #6f6bbb;
+        --background-activated: #6f6bbb;
+        --padding-top: 1rem;
+        --padding-bottom: 1rem;
+        --padding-start: 0.75rem;
+        --padding-end: 0.75rem;
+        margin-top: -0.2rem;
+    }
+}
