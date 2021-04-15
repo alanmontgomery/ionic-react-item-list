@@ -1,7 +1,6 @@
-import { IonBadge, IonButton, IonButtons, IonCardSubtitle, IonContent, IonFooter, IonHeader, IonIcon, IonItem, IonLabel, IonList, IonPage, IonSearchbar, IonTitle, IonToolbar } from '@ionic/react';
-import { addOutline, callOutline, chevronBack, phonePortraitOutline, search, trashOutline } from 'ionicons/icons';
+import { IonButton, IonButtons, IonCardSubtitle, IonContent, IonFooter, IonHeader, IonIcon, IonItem, IonLabel, IonList, IonPage, IonSearchbar, IonToolbar } from '@ionic/react';
+import { chevronBack, trashOutline } from 'ionicons/icons';
 import { useState } from 'react';
-import ExploreContainer from '../components/ExploreContainer';
 import styles from './Home.module.scss';
 
 const Home = () => {
@@ -52,10 +51,11 @@ const Home = () => {
 		document.getElementById(`employeeItem_${ id }`).classList.add("animate__slideOutRight");
 
 		setTimeout(() => {
+
 			const tempEmployees = [ ...employees ];
-		const newEmployees = tempEmployees.filter(e => parseInt(e.id) !== parseInt(id));
-		setResults(newEmployees);
-		setEmployees(newEmployees);
+			const newEmployees = tempEmployees.filter(e => parseInt(e.id) !== parseInt(id));
+			setResults(newEmployees);
+			setEmployees(newEmployees);
 		}, 700);
 	}
 
