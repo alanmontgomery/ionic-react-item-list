@@ -36,6 +36,14 @@
         overflow: hidden;
     }
 
+    ion-card-subtitle {
+
+        padding-left: 1.2rem;
+        margin-top: 1.9rem;
+        padding-bottom: 0.3rem;
+        --color: #5a55ca;
+    }
+
     ion-searchbar {
 
         --border-radius: 10px;
@@ -43,7 +51,8 @@
         --color: black;
         min-height: 5rem;
         padding: 1rem;
-        margin-top: 1rem;
+        padding-top: 0;
+        margin-top: -1rem;
     }
 
     ion-list {
@@ -98,6 +107,7 @@
 
         width: 3rem;
         border-radius: 10px;
+        border: 2px solid #e7edfb;
     }
 
     ion-label {

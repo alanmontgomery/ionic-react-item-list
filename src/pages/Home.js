@@ -1,4 +1,4 @@
-import { IonBadge, IonButton, IonButtons, IonContent, IonFooter, IonHeader, IonIcon, IonItem, IonLabel, IonList, IonPage, IonSearchbar, IonTitle, IonToolbar } from '@ionic/react';
+import { IonBadge, IonButton, IonButtons, IonCardSubtitle, IonContent, IonFooter, IonHeader, IonIcon, IonItem, IonLabel, IonList, IonPage, IonSearchbar, IonTitle, IonToolbar } from '@ionic/react';
 import { addOutline, callOutline, chevronBack, phonePortraitOutline, search, trashOutline } from 'ionicons/icons';
 import { useState } from 'react';
 import ExploreContainer from '../components/ExploreContainer';
@@ -16,26 +16,32 @@ const Home = () => {
 		{
 			id: 2,
 			name: "Max Lynch",
-			title: "Mobile Team Lead",
-			avatar: "https://pbs.twimg.com/profile_images/1349059994747076610/8dWvipvu_400x400.jpg"
+			title: "CEO | Co Founder",
+			avatar: "https://pbs.twimg.com/profile_images/1318970727173885953/bln98FNj_400x400.jpg"
 		},
 		{
 			id: 3,
 			name: "Mike Hartington",
-			title: "Mobile Team Lead",
-			avatar: "https://pbs.twimg.com/profile_images/1349059994747076610/8dWvipvu_400x400.jpg"
+			title: "Senior Dev Rel",
+			avatar: "https://pbs.twimg.com/profile_images/1084993841898446849/DJ8XtR6L_400x400.jpg"
 		},
 		{
 			id: 4,
 			name: "Matt Netkow",
-			title: "Mobile Team Lead",
-			avatar: "https://pbs.twimg.com/profile_images/1349059994747076610/8dWvipvu_400x400.jpg"
+			title: "Head of Product Marketing",
+			avatar: "https://pbs.twimg.com/profile_images/1323383930150621187/GKc0nVzi_400x400.jpg"
 		},
 		{
 			id: 5,
 			name: "Ben Sperry",
-			title: "Mobile Team Lead",
-			avatar: "https://pbs.twimg.com/profile_images/1349059994747076610/8dWvipvu_400x400.jpg"
+			title: "CDO | Co Founder",
+			avatar: "https://pbs.twimg.com/profile_images/1328390491126308864/jHHgl5Dm_400x400.jpg"
+		},
+		{
+			id: 6,
+			name: "Liam DeBeasi",
+			title: "Software Engineer",
+			avatar: "https://pbs.twimg.com/profile_images/1105953692669366273/ZNK4lRAJ_400x400.jpg"
 		}
 	]);
 
@@ -44,9 +50,13 @@ const Home = () => {
 	const remove = (id) => {
 
 		document.getElementById(`employeeItem_${ id }`).classList.add("animate__slideOutRight");
-		const tempEmployees = [ ...employees ];
+
+		setTimeout(() => {
+			const tempEmployees = [ ...employees ];
 		const newEmployees = tempEmployees.filter(e => parseInt(e.id) !== parseInt(id));
+		setResults(newEmployees);
 		setEmployees(newEmployees);
+		}, 700);
 	}
 
 	const search = (e) => {
@@ -57,7 +67,7 @@ const Home = () => {
 
 			const searchTermLower = searchTerm.toLowerCase();
 
-			const newResults = results.filter(e => e.name.toLowerCase().includes(searchTermLower));
+			const newResults = employees.filter(e => e.name.toLowerCase().includes(searchTermLower));
 			setResults(newResults);
 		} else {
 
@@ -81,16 +91,16 @@ const Home = () => {
 
 			<IonContent fullscreen className={ styles.content }>
 				<div className={ styles.mainContent }>
-					{/* <ExploreContainer /> */}
 
-					<IonSearchbar onKeyUp={ e => search(e) } placeholder="Search..." icon={ search } slot="end" />
+					<IonCardSubtitle>{ results.length } { (results.legnth === 1) ? "employee" : "employees" } found</IonCardSubtitle>
+					<IonSearchbar onKeyUp={ e => search(e) } onKeyPress={ e => search(e) } placeholder="Search..." icon={ search } slot="end" />
 
 					<IonList>
 						{ results.map((employee, index) => {
 
 							return (
 
-								<IonItem id={ `employeeItem_${ employee.id }` } className={ ` ${ styles.employeeItem } animate__animated animate__fadeIn` } key={ index } lines="none">
+								<IonItem id={ `employeeItem_${ employee.id }` } className={ ` ${ styles.employeeItem } animate__animated animate__fadeIn` } key={ employee.id } lines="none">
 									<img src={ employee.avatar } alt="employee avatar" />
 
 									<IonLabel>
