@@ -1,6 +1,6 @@
 import { IonButton, IonButtons, IonCardSubtitle, IonContent, IonFooter, IonHeader, IonIcon, IonItem, IonLabel, IonList, IonPage, IonSearchbar, IonToolbar } from '@ionic/react';
-import { chevronBack, trashOutline } from 'ionicons/icons';
-import { useState } from 'react';
+import { chevronBack, chevronForward, trashOutline } from 'ionicons/icons';
+import { useEffect, useState } from 'react';
 import styles from './Home.module.scss';
 
 const Home = () => {
@@ -86,13 +86,20 @@ const Home = () => {
 							&nbsp;Employee List
 						</IonButton>
 					</IonButtons>
+
+					<IonButtons slot="end">
+						<IonButton routerLink="/movies" color="light">
+							Movies&nbsp;
+							<IonIcon icon={ chevronForward } />
+						</IonButton>
+					</IonButtons>
 				</IonToolbar>
 			</IonHeader>
 
 			<IonContent fullscreen className={ styles.content }>
 				<div className={ styles.mainContent }>
 
-					<IonCardSubtitle>{ results.length } { (results.legnth === 1) ? "employee" : "employees" } found</IonCardSubtitle>
+					<IonCardSubtitle className={ styles.results }>{ results.length } { (results.legnth === 1) ? "employee" : "employees" } found</IonCardSubtitle>
 					<IonSearchbar onKeyUp={ e => search(e) } onKeyPress={ e => search(e) } placeholder="Search..." icon={ search } slot="end" />
 
 					<IonList>

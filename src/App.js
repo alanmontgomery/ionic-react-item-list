@@ -21,6 +21,7 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import Movies from './pages/Movies';
 
 const App = () => (
   <IonApp>
@@ -28,6 +29,10 @@ const App = () => (
       <IonRouterOutlet>
         <Route exact path="/home">
           <Home />
+        </Route>
+
+        <Route exact path="/movies">
+          <Movies />
         </Route>
         <Route exact path="/">
           <Redirect to="/home" />
