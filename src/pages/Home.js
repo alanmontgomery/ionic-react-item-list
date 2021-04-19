@@ -96,7 +96,7 @@ const Home = () => {
 				</IonToolbar>
 			</IonHeader>
 
-			<IonContent fullscreen className={ styles.content }>
+			<IonContent fullscreen>
 				<div className={ styles.mainContent }>
 
 					<IonCardSubtitle className={ styles.results }>{ results.length } { (results.legnth === 1) ? "employee" : "employees" } found</IonCardSubtitle>
