@@ -10,7 +10,7 @@ const Home = () => {
 			id: 1,
 			name: "Alan Montgomery",
 			title: "Mobile Team Lead",
-			avatar: "https://pbs.twimg.com/profile_images/1349059994747076610/8dWvipvu_400x400.jpg"
+			avatar: "https://pbs.twimg.com/profile_images/1383061489469292548/5dhsPd4j_400x400.jpg"
 		},
 		{
 			id: 2,
